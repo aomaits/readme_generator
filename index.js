@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+// const { userInfo } = require('os');
 
 inquirer
   .prompt([
@@ -64,32 +65,82 @@ inquirer
     switch (response.license) {
         case 'Apache License 2.0':
             var chosenLicenseLink = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+            projectLicense = 'Apache License 2.0';
             break;
         case 'MIT License':
             var chosenLicenseLink = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+            projectLicense = 'MIT License';
             break;
         case 'Creative Commons Zero v1.0 Universal':
             var chosenLicenseLink = "[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)";
+            projectLicense = 'Creative Commons Zero v1.0 Universal';
             break;
         case 'Mozilla Public License 2.0':
             var chosenLicenseLink = "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+            projectLicense = 'Mozilla Public License 2.0';
     }
 
     const filename = `${response.title.toLowerCase()}.md`;
-    const data = `# ${response.title}<br>## Description<br><p>${response.descriptionMotivation}<br>${response.descriptionSolvedProblem}<br>${response.descriptionLearned}</p><br>## Table of Contents<br><ul><li><a href="#installation">Installation</a></li><li><a href="#usage">Usage</a></li><li><a href="license">License</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#tests">Tests</a></li><li><a href="#questions">Questions</a></li></ul><br>## Installation<br><p>${response.installation}</p><br>## Usage<br><p>${response.usage}</p><br>## License<br>${chosenLicenseLink}<br><br>## Contributing<br><p>${response.contributing}</p><br>## Tests<br><p>${response.tests}</p> ## Questions<br><p>You can find my GitHub profile [here](https://github.com/${response.githubUsername}). Please feel free to reach out to me by email at [${response.email}](${response.email}) with any additional questions! </p>`
+    const projectTitle = response.title;
+    const descrMotiv = response.descriptionMotivation;
+    const descrSolvProb = response.descriptionSolvedProblem;
+    const descrLearned = response.descriptionLearned;
+    const projectInstallation = response.installation;
+    const projectUsage = response.usage;
+    const licenseBadge = chosenLicenseLink;
+    const licenseChosen = projectLicense;
+    const projectContributions = response.contributing;
+    const projectTests= response.tests;
+    const gitHubUser = response.githubUsername;
+    const userEmail = response.email;
 
-    fs.writeFile(filename, JSON.stringify(data, null, '\t'),  (err) =>
-    err ? console.log(err) : console.log('Success!')
-    );
+    convertToMarkdown(filename, projectTitle, descrMotiv, descrSolvProb, descrLearned, projectInstallation, projectUsage, licenseBadge, licenseChosen, projectContributions, projectTests, gitHubUser, userEmail)
   });
 
+function convertToMarkdown(filename, projectTitle, descrMotiv, descrSolvProb, descrLearned, projectInstallation, projectUsage, licenseBadge, licenseChosen, projectContributions, projectTests, gitHubUser, userEmail) {
+    var markdownVersion = `# ${projectTitle}
 
+# ${licenseBadge}
 
+## Description
+${descrMotiv}
+${descrSolvProb}
+${descrLearned}
 
-// const questions = [];
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+## Installation
+${projectInstallation}
+
+## Usage
+${projectUsage}
+
+## License
+This project uses a ${licenseChosen} license. 
+
+## Contributing
+${projectContributions}
+
+## Tests
+${projectTests}
+
+## Questions
+You can find my GitHub profile [here](https://github.com/${gitHubUser}). Please feel free to reach out to me by email at [${userEmail}](${userEmail}) with any additional questions!`;
+
+    writeToReadMe (filename, markdownVersion);
+};
+
+function writeToReadMe (filename, markdownVersion) {
+    fs.writeFile(filename, (markdownVersion), (err) =>
+    err ? console.log(err) : console.log('Success!')
+    );
+}
 
 // TODO: Create a function to initialize app
 function init() {
