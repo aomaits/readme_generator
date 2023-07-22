@@ -1,4 +1,5 @@
 # Abe's README Generator
+# [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 The aim of this project was to allow a user to dynamically create a README.md file by simply following the prompts in the terminal interface. 
@@ -21,3 +22,8 @@ Once all questions have been answered, the program will create the file based on
 ## Credits
 The starter code for this project was provided by the UT FullStack Coding Bootcamp. Nodejs was utilized. The NPM packages inquirer and file system were crucial to this project.
 
+## License
+This project uses a standard [MIT license](https://github.com/aomaits/readme_generator/blob/main/LICENSE).
+
+## In Use
+Here's a [link to a video of the program in use.]()
