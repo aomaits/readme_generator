@@ -76,41 +76,9 @@ inquirer
     }
 
     const filename = `${response.title.toLowerCase()}.md`;
-    const data = `# ${response.title}
-    
-## Description
-<p>${response.descriptionMotivation}<br>${response.descriptionSolvedProblem}<br>${response.descriptionLearned}</p>
+    const data = `# ${response.title}<br>## Description<br><p>${response.descriptionMotivation}<br>${response.descriptionSolvedProblem}<br>${response.descriptionLearned}</p><br>## Table of Contents<br><ul><li><a href="#installation">Installation</a></li><li><a href="#usage">Usage</a></li><li><a href="license">License</a></li><li><a href="#contributing">Contributing</a></li><li><a href="#tests">Tests</a></li><li><a href="#questions">Questions</a></li></ul><br>## Installation<br><p>${response.installation}</p><br>## Usage<br><p>${response.usage}</p><br>## License<br>${chosenLicenseLink}<br><br>## Contributing<br><p>${response.contributing}</p><br>## Tests<br><p>${response.tests}</p> ## Questions<br><p>You can find my GitHub profile [here](https://github.com/${response.githubUsername}). Please feel free to reach out to me by email at [${response.email}](${response.email}) with any additional questions! </p>`
 
-## Table of Contents
-<ul>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="license">License</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#tests">Tests</a></li>
-    <li><a href="#questions">Questions</a></li>
-</ul>
-
-## Installation
-<p>${response.installation}</p>
-
-## Usage
-<p>${response.usage}</p>
-
-## License
-${chosenLicenseLink}
-
-## Contributing
-<p>${response.contributing}</p>
-
-## Tests
-<p>${response.tests}</p>
-
-## Questions
-<p>You can find my GitHub profile [here](https://github.com/${response.githubUsername}). Please feel free to reach out to me by email at [${response.email}](${response.email}) with any additional questions! </p>
-`
-
-    fs.writeFile(filename, JSON.stringify(data),  (err) =>
+    fs.writeFile(filename, JSON.stringify(data, null, '\t'),  (err) =>
     err ? console.log(err) : console.log('Success!')
     );
   });
