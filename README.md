@@ -10,9 +10,13 @@ No installation necessary.
 
 ## Usage
 The user will first need to open the integrated terminal. Using node, the user will then open the index.js file.
-![alttxt](imagepath)
+![picture of the open terminal with the "node index.js" command entered](/assets/node-index-js.jpg)
 
-From there, 
+From there, the user will be prompted to answer questions in order to create their README.md file.
+![picture of the user responding to the prompts](/assets/questions.jpg)
+
+Once all questions have been answered, the program will create the file based on the user's responses. 
+![picture of successfully created markdown file](/assets/success.jpg)
 
 ## Credits
 The starter code for this project was provided by the UT FullStack Coding Bootcamp. Nodejs was utilized. The NPM packages inquirer and file system were crucial to this project.
