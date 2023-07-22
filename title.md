@@ -1,4 +1,0 @@
-"# TITLE\n\n## Description\n<p>DESCRIPTION<br>DESCRIPTION<br>MORE DESCR</p>\n\n## Table of Contents\n<ul>\n    <li><a href=\"#installation\">Installation</a></li>\n    <li><a href=\"#usage\">Usage</a></li>\n    <li><a href=\"license\">License</a></li>\n    <li><a href=\"#contributing\">Contributing</a></li>\n    <li><a href=\"#tests\">Tests</a></li>\n    <li><a href=\"#questions\">Questions</a></li>\n</ul>\n\n## Installation\n<p>STEP 1</p>\n\n## Usage\n<p>EXAMPLE 2</p>\n\n## License\n[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)\n\n## Contributing\n<p>SAM</p>\n\n## Tests\n<p>TEST 1</p>\n\n## Questions\n<p>You can find my GitHub profile 
-<a href=\"https://github.com/aomaits\">here</a>.
-
- Please feel free to reach out to me by email at at [aomaits1@gmail.com](aomaits1@gmail.com)</a> with any additional questions! </p>\n"
