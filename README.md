@@ -26,4 +26,4 @@ The starter code for this project was provided by the UT FullStack Coding Bootca
 This project uses a standard [MIT license](https://github.com/aomaits/readme_generator/blob/main/LICENSE).
 
 ## In Use
-Here's a [link to a video of the program in use.]()
+Here's a [link to a video of the program in use.](https://drive.google.com/file/d/1gd-h5sU2fq7J3xehawm7801wglJBz2-f/view)
