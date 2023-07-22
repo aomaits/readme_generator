@@ -8,5 +8,12 @@ Using this README generator should be much faster for the user. The generated RE
 ## Installation
 No installation necessary. 
 
-##
+## Usage
+The user will first need to open the integrated terminal. Using node, the user will then open the index.js file.
+![alttxt](imagepath)
+
+From there, 
+
+## Credits
+The starter code for this project was provided by the UT FullStack Coding Bootcamp. Nodejs was utilized. The NPM packages inquirer and file system were crucial to this project.
 
