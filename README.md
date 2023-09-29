@@ -6,6 +6,8 @@ The aim of this project was to allow a user to dynamically create a README.md fi
 
 Using this README generator should be much faster for the user. The generated README file can then be accessed and updated if the user elects to do so.
 
+This project allowed me to practice capturing and storing a dynamic input. I also was able to gain familiarity with the inquirer node package. 
+
 ## Installation
 No installation necessary. 
 
